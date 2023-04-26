@@ -19,3 +19,5 @@ de lo contrario no se permitira acceder a la visualizacion de la pantalla.
 -Una vez seleccionado el modo de juego y el tamaño del tablero, deberá presionar enter; tal que así, se muestre el tablero en la parte inferior de la ventana, junto
 con los botones de seleccion de simbolo de cada jugador.
 Podrá interactuar con el tablero, en el terminal se mostraran los turnos asignados a modo de ejemplificacion de como funcionaria el programa.
+
+-Para limpiar toda la ventana presione el boton NewGame
