@@ -2,7 +2,7 @@
 En esta primera entrega se esta subiendo avances de 3 historias de usuario completas aplicando los test a sus respectivos criterios de aceptacion. 
 No se llego a refactorizar todo el codigo avanzado; asu vez, los test de movimiento, seleccion de modo de juego, tablero vacio, estan a medio terminar, en el sprint 1
 se especifica que historias de usuario estan por hacerse.
-Los documentos de los sprint's se encuentran en la carpeta SOS (GAME) y el proyecto como tal (Codigo) se ecnuentra en la carpeta SOS_GAME
+Los documentos de los sprint's se encuentran en la carpeta "CC3S2 SOS(GAME)" y el proyecto como tal (Codigo) se ecnuentra en la carpeta SOS_GAME
 
 #ACLARACIONES
 - Al no haber asserts destinados al test de la interfaz grafica, todas las pruebas que estan relacionadas con la verificacion de funcion de botones, la verificación
