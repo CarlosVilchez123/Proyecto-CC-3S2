@@ -4,27 +4,40 @@ public class Tablero {
     public enum ContenidoDeLasCeldasDelTablero {VACIO, SIMBOLO_AZUL_O, SIMBOLO_AZUL_S, SIMBOLO_ROJO_S,SIMBOLO_ROJO_O};
 
     public enum EstadoDeJuego {EN_TURNO, COLOCANDO, AZUL_GANA, ROJO_GANA};
+    public enum ModoDeJuego {SIMPLE, GENERAL};
     public ContenidoDeLasCeldasDelTablero celdas[][];
-    public char turno;
-    public char seleccion;
-    private int NumFilas;
+    private EstadoDeJuego estadoActualDeJuego;
+    public char seleccion_azul;
+    public char seleccion_rojo;
+    private int NumFilas=3;
 
-    private int NumColumnas;
+    private int NumColumnas=3;
+    private char turno;
 
-    public Tablero(int NumFilas, int NumColumnas)
+    public Tablero()
     {
-
-        this.NumFilas=NumFilas;
-        this.NumColumnas=NumColumnas;
-
         celdas = new ContenidoDeLasCeldasDelTablero[NumFilas][NumColumnas];
+        initTablero();
+    }
 
+    public void initTablero()
+    {
         for(int filas=0; filas<NumFilas;filas++)
             for (int columnas=0; columnas<NumColumnas;columnas++)
                 celdas[filas][columnas]= ContenidoDeLasCeldasDelTablero.VACIO;
+        estadoActualDeJuego=EstadoDeJuego.EN_TURNO;
         turno='A';
     }
-
+    public ModoDeJuego SeleccionDeModoDeJuegoSimple()
+    {
+        return ModoDeJuego.SIMPLE;
+    }
+    public ModoDeJuego SeleccionDeModoDeJuegoGeneral()
+    {
+        return ModoDeJuego.GENERAL;
+    }
+    public void setNumFilas(int NumFilas){this.NumFilas=NumFilas;}
+    public void setNumColumnas(int NumColumnas){this.NumColumnas=NumColumnas;}
     public int getNumFilas(){
         return NumFilas;
     }
@@ -37,34 +50,55 @@ public class Tablero {
         else return null;
     }
     public void hacerMovimiento(int filas, int columnas) {
-        if(filas>=0 && filas<NumFilas && columnas>=0 && columnas<NumColumnas && celdas[filas][columnas]==ContenidoDeLasCeldasDelTablero.VACIO)
+        if(filas>=0 && filas < NumFilas && columnas>=0 && columnas < NumColumnas && celdas[filas][columnas]==ContenidoDeLasCeldasDelTablero.VACIO)
         {
-            if(turno=='A')
-            {
-                if(seleccion=='O')
-                {
-                    celdas[filas][columnas]=ContenidoDeLasCeldasDelTablero.SIMBOLO_AZUL_O;
+
+            if(turno=='A'){
+                if(seleccion_azul=='S') {
+                    celdas[filas][columnas] = ContenidoDeLasCeldasDelTablero.SIMBOLO_AZUL_S;
+                    actualizarEstadoDeJuego(turno,filas,columnas);
+                    turno='R';
+                }else{
+                    celdas[filas][columnas] = ContenidoDeLasCeldasDelTablero.SIMBOLO_AZUL_O;
+                    actualizarEstadoDeJuego(turno,filas,columnas);
+                    turno='R';
                 }
-                else {
-                    if (seleccion == 'S') {
-                        celdas[filas][columnas] = ContenidoDeLasCeldasDelTablero.SIMBOLO_AZUL_S;
-                    }
+            }else{
+                if(seleccion_rojo =='S') {
+                    celdas[filas][columnas] = ContenidoDeLasCeldasDelTablero.SIMBOLO_ROJO_S;
+                    actualizarEstadoDeJuego(turno,filas,columnas);
+                    turno='A';
+                }else{
+                    celdas[filas][columnas] = ContenidoDeLasCeldasDelTablero.SIMBOLO_ROJO_O;
+                    actualizarEstadoDeJuego(turno,filas,columnas);
+                    turno='A';
                 }
-                turno='R';
-            }else
-            if(turno=='R')
-            {
-                turno='A';
-                if(seleccion=='O') {
-                    celdas[filas][columnas]=ContenidoDeLasCeldasDelTablero.SIMBOLO_ROJO_O;
-                }
-                else
-                if(seleccion=='S') {
-                    celdas[filas][columnas]=ContenidoDeLasCeldasDelTablero.SIMBOLO_ROJO_S;
-                }
-                turno='A';
             }
         }
+    }
+    private void actualizarEstadoDeJuego(char turno,int filas, int columnas)
+    {
+        if(GanadorSimple(turno,filas,columnas))
+        {
+            estadoActualDeJuego = (turno=='A')? EstadoDeJuego.AZUL_GANA:EstadoDeJuego.ROJO_GANA;
+        }else if(ColocaSimbolo()){
+            estadoActualDeJuego = EstadoDeJuego.COLOCANDO;
+        }
+    }
+    private boolean ColocaSimbolo()
+    {
+        for (int filas = 0; filas < NumFilas; ++filas) {
+            for (int col = 0; col < NumColumnas; ++col) {
+                if (celdas[filas][col] == ContenidoDeLasCeldasDelTablero.VACIO) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    private boolean GanadorSimple(char turno, int filas, int numColumnas)
+    {
+        return false;
     }
     public char getTurno()
     {
@@ -74,12 +108,21 @@ public class Tablero {
     {
         this.turno=turno;
     }
-    public char getSelccion()
+    public char getSelccionRojo()
     {
-        return seleccion;
+        return seleccion_rojo;
     }
-    public void setSeleccion(char seleccion)
+    public char getSeleccionAzul()
     {
-        this.seleccion=seleccion;
+        return seleccion_azul;
     }
+    public void setSeleccionRojo(char seleccion_rojo)
+    {
+        this.seleccion_rojo=seleccion_rojo;
+    }
+    public void setSeleccionAzul(char seleccion_azul){
+        this.seleccion_azul=seleccion_azul;
+    }
+    public EstadoDeJuego getEstadoDeJuego(){ return estadoActualDeJuego;}
+
 }

@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 public class testTableroVacio {
     //instanciamos un objeto Tablero con parametros de entrada permitidos.
-    private Tablero tablero = new Tablero(4,4);
+    private Tablero tablero = new Tablero();
 
 
     /*
@@ -19,9 +19,12 @@ public class testTableroVacio {
      */
     @Test
     public void testTableroLogicoVacio() {
-
         for(int filas=0; filas<tablero.getNumFilas();filas++)
+        {
             for (int columnas=0; columnas<tablero.getNumColumnas();columnas++)
+            {
                 assertEquals("", tablero.getContenidoDeLasCeldasDelTablero(filas,columnas), Tablero.ContenidoDeLasCeldasDelTablero.VACIO);
+            }
+        }
     }
 }

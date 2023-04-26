@@ -7,41 +7,31 @@ import static org.junit.Assert.assertTrue;
 
 public class testMovimiento{
     private Tablero tablero =
-            new Tablero(4,4);
+            new Tablero();
 
     // Criterio de aceptación 4.1 y 11.1
+
     @Test
-    public void testMovimientoValidoModoSimple() {
+    public void testMovimientoValidoModoSimpleGeneral() {
 
         assertEquals("", tablero.getContenidoDeLasCeldasDelTablero(0, 0), Tablero.ContenidoDeLasCeldasDelTablero.VACIO);
         assertEquals("", tablero.getTurno(),'A');
     }
     //Criterio de aceptacion 4.2 y 11.2
     @Test
-    public void testMovimientoInvalidoModoSimple(){
-        tablero.setSeleccion('S');
+    public void testMovimientoInvalidoModoSimpleGeneral(){
+        tablero.setSeleccionAzul('O');
         tablero.hacerMovimiento(0,0);
-        assertEquals("", tablero.getContenidoDeLasCeldasDelTablero(0, 0), Tablero.ContenidoDeLasCeldasDelTablero.SIMBOLO_AZUL_S);
+        assertEquals("", tablero.getContenidoDeLasCeldasDelTablero(0, 0), Tablero.ContenidoDeLasCeldasDelTablero.SIMBOLO_AZUL_O);
         assertEquals("", tablero.getTurno(),'R');
     }
-    /*
+
     // Criterio de aceptación 5.1
     @Test
-    public void testSiguienteTurnoModoSimple(){
-        assertEquals("",tablero.getSOS(),0);
-    }
-    // Criterio de aceptación 6.1
-    @Test
-    public void testFinDelJuegoModoSimplePorFormarSOS() {
-        assertEquals("SOS", tablero.getSOS(), 0);
-    }
-    // Criterio de aceptación 6.2
-    @Test
-    public void testFinDelJuegoModoSimpleEmpate() {
-        assertEquals("T", tablero.isTableroLleno(), 0);
-
-
+    public void testSiguienteTurnoModoSimpleGeneral(){
+        tablero.setSeleccionAzul('O');
+        tablero.hacerMovimiento(1,0);
+        assertEquals("", tablero.getTurno(),'R');
     }
 
-     */
 }

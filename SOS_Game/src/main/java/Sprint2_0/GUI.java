@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class GUI extends JFrame{
 
@@ -19,13 +21,16 @@ public class GUI extends JFrame{
     private JButton newGameButton;
     private JLabel lblAzul;
     private JLabel lblRojo;
+    private JLabel lblTurno;
     private PanelBoard pane;
     private int TAM_CELDA=100;
     private int ANCHO;
     private int LARGO;
     private int NUM_CELDAS;
-    public GUI()
+    private Tablero tableroLogico;
+    public GUI(Tablero tableroLogico)
     {
+        this.tableroLogico = tableroLogico;
         initComponents();
         actionListener();
         BotonesJuegoNuevo();
@@ -66,6 +71,9 @@ public class GUI extends JFrame{
                 if(juegoGeneralRadioButton.isSelected()==true || juegoSimpleRadioButton.isSelected()==true) {
                     NUM_CELDAS = Character.getNumericValue(txtBorderSize.getText().charAt(0));
                     if (NUM_CELDAS > 2 & NUM_CELDAS < 6) {
+                        tableroLogico.setNumFilas(NUM_CELDAS);
+                        tableroLogico.setNumColumnas(NUM_CELDAS);
+
                         add(pane, BorderLayout.SOUTH);
                         pane.setBackground(Color.WHITE);
                         pane.setVisible(true);
@@ -87,6 +95,7 @@ public class GUI extends JFrame{
         newGameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                tableroLogico.initTablero();
                 txtBorderSize.setFocusable(true);
                 txtBorderSize.setText("");
 
@@ -135,21 +144,67 @@ public class GUI extends JFrame{
         sRadioButtonRojo.setVisible(false);
         oRadioButtonRojo.setVisible(false);
 
+
+
         add(pane,BorderLayout.SOUTH);
         pane.setVisible(false);
         setVisible(true);
 
+
+
         pack();
+    }
+    private void MostrarTurnos()
+    {
+        if(tableroLogico.getEstadoDeJuego()== Tablero.EstadoDeJuego.EN_TURNO)
+        {
+            if(tableroLogico.getTurno()=='A')
+            {
+                lblTurno.setForeground(Color.BLUE);
+                lblTurno.setText("TURNO DEL JUGADOR AZUL");
+            }else {
+                lblTurno.setForeground(Color.RED);
+                lblTurno.setText("TURNO DEL JUGADOR ROJO");
+            }
+        }
     }
     public class PanelBoard extends JPanel {
         public PanelBoard() {
             setPreferredSize(new Dimension(ANCHO, LARGO-200));
-            setBackground(Color.BLACK);
+            addMouseListener(new MouseAdapter() {
+                public void mouseClicked(MouseEvent e) {
+                    if(tableroLogico.getEstadoDeJuego()== Tablero.EstadoDeJuego.EN_TURNO){
+                        if(sRadioButtonAzul.isSelected()==true) tableroLogico.setSeleccionAzul('S');
+                        if(oRadioButtonAzul.isSelected()==true) tableroLogico.setSeleccionAzul('O');
+                        if(sRadioButtonRojo.isSelected()==true) tableroLogico.setSeleccionRojo('S');
+                        if(oRadioButtonRojo.isSelected()==true) tableroLogico.setSeleccionRojo('O');
+                        int filaSelected=e.getY()/TAM_CELDA;
+                        int ColumnaSelected=e.getX()/TAM_CELDA;
+                        System.out.println(filaSelected+","+ColumnaSelected);
+                        if(tableroLogico.getTurno()=='A')
+                            System.out.println(tableroLogico.getSeleccionAzul()+" turno "+tableroLogico.getTurno());
+                        else System.out.println(tableroLogico.getSelccionRojo()+" turno "+tableroLogico.getTurno());
+
+                        System.out.println(tableroLogico.getEstadoDeJuego());
+                        tableroLogico.hacerMovimiento(filaSelected, ColumnaSelected);
+
+                    }else{
+
+                    }
+                }
+            });
+
         }
         @Override
         public void paintComponent(Graphics g) {
             g.setColor(Color.BLACK);
 
+            DibujarTablero(g);
+            DibujarSimbolos(g);
+            MostrarTurnos();
+        }
+        public void DibujarTablero(Graphics g)
+        {
             for( int filas=1; filas<NUM_CELDAS; filas++)
             {
                 g.fillRoundRect(0,filas*(LARGO-200)/NUM_CELDAS,ANCHO,6, 6,6);
@@ -160,13 +215,18 @@ public class GUI extends JFrame{
                 g.fillRoundRect(colum*ANCHO/NUM_CELDAS,0,6,ANCHO, 6,6);
             }
         }
+        public void DibujarSimbolos(Graphics g)
+        {
+
+        }
+
     }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new GUI();
+                new GUI(new Tablero());
             }
         });
     }
