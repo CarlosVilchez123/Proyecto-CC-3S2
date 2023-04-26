@@ -12,9 +12,10 @@ el texto del text area, probando los botones, etc.
 LINK: https://drive.google.com/drive/u/1/folders/15wx4HXHcRcnef493kY5buJ073dV8j7aJ
 
 #INSTRUCCION DE USO DE LA GUI
-Una vez ejecutado el cosigo de la GUI, se le solicitara ingresar un tamaño de tablero permitido, un tamaño mayor que 2, con la previa seleccion del modo de juego
+
+-Una vez ejecutado el codigo de la GUI, se le solicitara ingresar un tamaño de tablero permitido, un tamaño mayor que 2, con la previa seleccion del modo de juego
 de lo contrario no se permitira acceder a la visualizacion de la pantalla.
 
-Una vez seleccionado el modo de juego y el tamaño del tablero, deberá presionar enter; tal que así, se muestre el tablero en la parte inferior de la ventana, junto
+-Una vez seleccionado el modo de juego y el tamaño del tablero, deberá presionar enter; tal que así, se muestre el tablero en la parte inferior de la ventana, junto
 con los botones de seleccion de simbolo de cada jugador.
 Podrá interactuar con el tablero, en el terminal se mostraran los turnos asignados a modo de ejemplificacion de como funcionaria el programa.
