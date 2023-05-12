@@ -20,3 +20,4 @@ LINK: https://drive.google.com/drive/u/1/folders/15wx4HXHcRcnef493kY5buJ073dV8j7
 **ACLARACIONES ENTREGA EN EL SPRINT 4**
 - Debido a que la complejidad de implementar test para determinar la victoria del jugador contra la maquina, se opto por evitar usar el menu hecho en el sprint 3
 - Dicho esto, en el video de exposicion se muestra las funcionalidades del programa en el sprint 4
+- Link del video: https://drive.google.com/file/d/1tLT8S11qePjCUVwZVN5xw4l3NblBGuM0/view?usp=sharing
