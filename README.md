@@ -11,18 +11,12 @@ el texto del text area, probando los botones, etc.
 - Debido a que el video pesa más de 25 MB no puede ser colocado en el reopositorio, adjunto el link que dirige al video de exposicion.
 LINK: https://drive.google.com/drive/u/1/folders/15wx4HXHcRcnef493kY5buJ073dV8j7aJ
 
-**INSTRUCCION DE USO DE LA GUI**
-
-- Una vez ejecutado el codigo de la GUI, se le solicitara ingresar un tamaño de tablero permitido, un tamaño mayor que 2, con la previa seleccion del modo de juego
-de lo contrario no se permitira acceder a la visualizacion de la pantalla.
-
-- Una vez seleccionado el modo de juego y el tamaño del tablero, deberá presionar enter; tal que así, se muestre el tablero en la parte inferior de la ventana, junto
-con los botones de seleccion de simbolo de cada jugador.
-Podrá interactuar con el tablero, en el terminal se mostraran los turnos asignados a modo de ejemplificacion de como funcionaria el programa.
-
 -Para limpiar toda la ventana presione el boton NewGame
 
 **ACLARACIONES ENTREGA EN EL SPRINT 3**
 - Se logro implementar la mayoria de implementaciones solicitadas en el documento.
 - el simbolo C esta siendo reemplazado por el simbolo S, puesto que no se logro concretar la forma de la letra que corresponde al juego SOS.
 - Se agrego una nueva GUI llamada MENU en la que se ingresaran los isguientes parametros: modo de juego y tamaño del tablero.
+**ACLARACIONES ENTREGA EN EL SPRINT 4**
+- Debido a que la complejidad de implementar test para determinar la victoria del jugador contra la maquina, se opto por evitar usar el menu hecho en el sprint 3
+- Dicho esto, en el video de exposicion se muestra las funcionalidades del programa en el sprint 4
