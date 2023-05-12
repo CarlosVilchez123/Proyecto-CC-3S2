@@ -25,3 +25,4 @@ Podrá interactuar con el tablero, en el terminal se mostraran los turnos asigna
 **ACLARACIONES ENTREGA EN EL SPRINT 3**
 - Se logro implementar la mayoria de implementaciones solicitadas en el documento.
 - el simbolo C esta siendo reemplazado por el simbolo S, puesto que no se logro concretar la forma de la letra que corresponde al juego SOS.
+- Se agrego una nueva GUI llamada MENU en la que se ingresaran los isguientes parametros: modo de juego y tamaño del tablero.
