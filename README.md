@@ -21,3 +21,7 @@ con los botones de seleccion de simbolo de cada jugador.
 Podrá interactuar con el tablero, en el terminal se mostraran los turnos asignados a modo de ejemplificacion de como funcionaria el programa.
 
 -Para limpiar toda la ventana presione el boton NewGame
+
+#ACLARACIONES ENTREGA EN EL SPRINT 3
+Debido a la complejidad hecha en la GUI en el sprint 2 se decidio por mejorarlo en el sprint 4; sin embargo todas las implementaciones pedidas en el sprint 3
+estan realizadas y probadas en los test, que corresponden a los criterios de aceptación que se hicieron en el sprin 1.
