@@ -17,6 +17,7 @@ LINK: https://drive.google.com/drive/u/1/folders/15wx4HXHcRcnef493kY5buJ073dV8j7
 - Se logro implementar la mayoria de implementaciones solicitadas en el documento.
 - el simbolo C esta siendo reemplazado por el simbolo S, puesto que no se logro concretar la forma de la letra que corresponde al juego SOS.
 - Se agrego una nueva GUI llamada MENU en la que se ingresaran los isguientes parametros: modo de juego y tamaño del tablero.
+- Link del video :https://drive.google.com/file/d/1944CSIb1z18OTM-Q2s4oRGDeWub3jMp_/view?usp=share_link
 **ACLARACIONES ENTREGA EN EL SPRINT 4**
 - Debido a que la complejidad de implementar test para determinar la victoria del jugador contra la maquina, se opto por evitar usar el menu hecho en el sprint 3
 - Dicho esto, en el video de exposicion se muestra las funcionalidades del programa en el sprint 4
