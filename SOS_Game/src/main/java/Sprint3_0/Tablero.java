@@ -86,105 +86,58 @@ public class Tablero {
             {
                 if(seleccion=='S')
                 {
-                        if( filas-1>= 0 && filas-1< NumFilas && columnas+1>= 0 && columnas+1< NumColumnas && filas-2>= 0 && filas-2< NumFilas && columnas+2>= 0 && columnas+2< NumColumnas)
-                            return (celdas[filas][columnas]==ContenidoCeldas.AZUL_S && celdas[filas-1][columnas+1]==ContenidoCeldas.AZUL_O && celdas[filas-2][columnas+2]==ContenidoCeldas.AZUL_S);
-
-                        if( filas>= 0 && filas< NumFilas && columnas+1>= 0 && columnas+1< NumColumnas && filas>= 0 && filas< NumFilas && columnas+2>= 0 && columnas+2< NumColumnas)
-                            return (celdas[filas][columnas]==ContenidoCeldas.AZUL_S && celdas[filas][columnas+1]==ContenidoCeldas.AZUL_O && celdas[filas][columnas+2]==ContenidoCeldas.AZUL_S);
-
-                        if( filas+1>= 0 && filas+1< NumFilas && columnas+1>= 0 && columnas+1< NumColumnas && filas+2>= 0 && filas+2< NumFilas && columnas+2>= 0 && columnas+2< NumColumnas)
-                            return (celdas[filas][columnas]==ContenidoCeldas.AZUL_S && celdas[filas+1][columnas+1]==ContenidoCeldas.AZUL_O && celdas[filas+2][columnas+2]==ContenidoCeldas.AZUL_S);
-
-                        if( filas+1>= 0 && filas+1< NumFilas && columnas>= 0 && columnas< NumColumnas && filas+2>= 0 && filas+2< NumFilas && columnas>= 0 && columnas< NumColumnas)
-                            return (celdas[filas][columnas]==ContenidoCeldas.AZUL_S && celdas[filas+1][columnas]==ContenidoCeldas.AZUL_O && celdas[filas+2][columnas]==ContenidoCeldas.AZUL_S);
-
-                        if( filas+1>= 0 && filas+1< NumFilas && columnas-1>= 0 && columnas-1< NumColumnas && filas+2>= 0 && filas+2< NumFilas && columnas-2>= 0 && columnas-2< NumColumnas)
-                            return (celdas[filas][columnas]==ContenidoCeldas.AZUL_S && celdas[filas+1][columnas-1]==ContenidoCeldas.AZUL_O && celdas[filas+2][columnas-2]==ContenidoCeldas.AZUL_S);
-
-                        if( filas-1>= 0 && filas-1< NumFilas && columnas-1>= 0 && columnas-1< NumColumnas && filas-2>= 0 && filas-2< NumFilas && columnas-2>= 0 && columnas-2< NumColumnas)
-                            return (celdas[filas][columnas]==ContenidoCeldas.AZUL_S && celdas[filas-1][columnas-1]==ContenidoCeldas.AZUL_O && celdas[filas-2][columnas-2]==ContenidoCeldas.AZUL_S);
-
-                        if( filas>= 0 && filas< NumFilas && columnas-1>= 0 && columnas-1< NumColumnas && filas>= 0 && filas< NumFilas && columnas-2>= 0 && columnas-2< NumColumnas)
-                            return (celdas[filas][columnas]==ContenidoCeldas.AZUL_S && celdas[filas][columnas-1]==ContenidoCeldas.AZUL_O && celdas[filas][columnas-2]==ContenidoCeldas.AZUL_S);
-
-                        if( filas-1>= 0 && filas-1< NumFilas && columnas>= 0 && columnas< NumColumnas && filas-2>= 0 && filas-2< NumFilas && columnas>= 0 && columnas< NumColumnas)
-                            return (celdas[filas][columnas]==ContenidoCeldas.AZUL_S && celdas[filas-1][columnas]==ContenidoCeldas.AZUL_O && celdas[filas-2][columnas]==ContenidoCeldas.AZUL_S);
-                }else{
                     if( filas-1>= 0 && filas-1< NumFilas && columnas+1>= 0 && columnas+1< NumColumnas && filas-2>= 0 && filas-2< NumFilas && columnas+2>= 0 && columnas+2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.AZUL_O && celdas[filas-1][columnas+1]==ContenidoCeldas.AZUL_S && celdas[filas-2][columnas+2]==ContenidoCeldas.AZUL_S);
+                        if (celdas[filas][columnas]==ContenidoCeldas.AZUL_S && celdas[filas-1][columnas+1]==ContenidoCeldas.AZUL_O && celdas[filas-2][columnas+2]==ContenidoCeldas.AZUL_S) return true;
 
                     if( filas>= 0 && filas< NumFilas && columnas+1>= 0 && columnas+1< NumColumnas && filas>= 0 && filas< NumFilas && columnas+2>= 0 && columnas+2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.AZUL_O && celdas[filas][columnas+1]==ContenidoCeldas.AZUL_S && celdas[filas][columnas+2]==ContenidoCeldas.AZUL_S);
+                        if (celdas[filas][columnas]==ContenidoCeldas.AZUL_S && celdas[filas][columnas+1]==ContenidoCeldas.AZUL_O && celdas[filas][columnas+2]==ContenidoCeldas.AZUL_S) return true;
 
                     if( filas+1>= 0 && filas+1< NumFilas && columnas+1>= 0 && columnas+1< NumColumnas && filas+2>= 0 && filas+2< NumFilas && columnas+2>= 0 && columnas+2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.AZUL_O && celdas[filas+1][columnas+1]==ContenidoCeldas.AZUL_S && celdas[filas+2][columnas+2]==ContenidoCeldas.AZUL_S);
+                        if (celdas[filas][columnas]==ContenidoCeldas.AZUL_S && celdas[filas+1][columnas+1]==ContenidoCeldas.AZUL_O && celdas[filas+2][columnas+2]==ContenidoCeldas.AZUL_S) return true;
 
                     if( filas+1>= 0 && filas+1< NumFilas && columnas>= 0 && columnas< NumColumnas && filas+2>= 0 && filas+2< NumFilas && columnas>= 0 && columnas< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.AZUL_O && celdas[filas+1][columnas]==ContenidoCeldas.AZUL_S && celdas[filas+2][columnas]==ContenidoCeldas.AZUL_S);
+                        if (celdas[filas][columnas]==ContenidoCeldas.AZUL_S && celdas[filas+1][columnas]==ContenidoCeldas.AZUL_O && celdas[filas+2][columnas]==ContenidoCeldas.AZUL_S) return true;
 
                     if( filas+1>= 0 && filas+1< NumFilas && columnas-1>= 0 && columnas-1< NumColumnas && filas+2>= 0 && filas+2< NumFilas && columnas-2>= 0 && columnas-2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.AZUL_O && celdas[filas+1][columnas-1]==ContenidoCeldas.AZUL_S && celdas[filas+2][columnas-2]==ContenidoCeldas.AZUL_S);
+                        if (celdas[filas][columnas]==ContenidoCeldas.AZUL_S && celdas[filas+1][columnas-1]==ContenidoCeldas.AZUL_O && celdas[filas+2][columnas-2]==ContenidoCeldas.AZUL_S) return true;
 
                     if( filas-1>= 0 && filas-1< NumFilas && columnas-1>= 0 && columnas-1< NumColumnas && filas-2>= 0 && filas-2< NumFilas && columnas-2>= 0 && columnas-2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.AZUL_O && celdas[filas-1][columnas-1]==ContenidoCeldas.AZUL_S && celdas[filas-2][columnas-2]==ContenidoCeldas.AZUL_S);
+                        if (celdas[filas][columnas]==ContenidoCeldas.AZUL_S && celdas[filas-1][columnas-1]==ContenidoCeldas.AZUL_O && celdas[filas-2][columnas-2]==ContenidoCeldas.AZUL_S) return true;
 
                     if( filas>= 0 && filas< NumFilas && columnas-1>= 0 && columnas-1< NumColumnas && filas>= 0 && filas< NumFilas && columnas-2>= 0 && columnas-2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.AZUL_O && celdas[filas][columnas-1]==ContenidoCeldas.AZUL_S && celdas[filas][columnas-2]==ContenidoCeldas.AZUL_S);
+                        if (celdas[filas][columnas]==ContenidoCeldas.AZUL_S && celdas[filas][columnas-1]==ContenidoCeldas.AZUL_O && celdas[filas][columnas-2]==ContenidoCeldas.AZUL_S) return true;
 
-                    if( filas-1>= 0 && filas-1< NumFilas && columnas-1>= 0 && columnas-1< NumColumnas && filas-2>= 0 && filas-2< NumFilas && columnas>= 0 && columnas< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.AZUL_O && celdas[filas-1][columnas]==ContenidoCeldas.AZUL_S && celdas[filas-2][columnas]==ContenidoCeldas.AZUL_S);
+                    if((filas-1>=0 && filas-1<NumFilas && columnas>=0 && columnas<NumColumnas)&&(filas-2>=0 && filas-2<NumFilas && columnas>=0 && columnas<NumColumnas))
+                        if (celdas[filas][columnas]==ContenidoCeldas.AZUL_S && celdas[filas-1][columnas]==ContenidoCeldas.AZUL_O && celdas[filas-2][columnas]==ContenidoCeldas.AZUL_S) return true;
                 }
 
-            }else {
+            }else
+            {
                 if(seleccion=='S')
                 {
                     if( filas-1>= 0 && filas-1< NumFilas && columnas+1>= 0 && columnas+1< NumColumnas && filas-2>= 0 && filas-2< NumFilas && columnas+2>= 0 && columnas+2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.ROJO_S && celdas[filas-1][columnas+1]==ContenidoCeldas.ROJO_O && celdas[filas-2][columnas+2]==ContenidoCeldas.ROJO_S);
+                        if (celdas[filas][columnas]==ContenidoCeldas.ROJO_S && celdas[filas-1][columnas+1]==ContenidoCeldas.ROJO_O && celdas[filas-2][columnas+2]==ContenidoCeldas.ROJO_S) return true;
 
                     if( filas>= 0 && filas< NumFilas && columnas+1>= 0 && columnas+1< NumColumnas && filas>= 0 && filas< NumFilas && columnas+2>= 0 && columnas+2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.ROJO_S && celdas[filas][columnas+1]==ContenidoCeldas.ROJO_O && celdas[filas][columnas+2]==ContenidoCeldas.ROJO_S);
+                        if (celdas[filas][columnas]==ContenidoCeldas.ROJO_S && celdas[filas][columnas+1]==ContenidoCeldas.ROJO_O && celdas[filas][columnas+2]==ContenidoCeldas.ROJO_S) return true;
 
                     if( filas+1>= 0 && filas+1< NumFilas && columnas+1>= 0 && columnas+1< NumColumnas && filas+2>= 0 && filas+2< NumFilas && columnas+2>= 0 && columnas+2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.ROJO_S && celdas[filas+1][columnas+1]==ContenidoCeldas.ROJO_O && celdas[filas+2][columnas+2]==ContenidoCeldas.ROJO_S);
+                        if (celdas[filas][columnas]==ContenidoCeldas.ROJO_S && celdas[filas+1][columnas+1]==ContenidoCeldas.ROJO_O && celdas[filas+2][columnas+2]==ContenidoCeldas.ROJO_S) return true;
 
                     if( filas+1>= 0 && filas+1< NumFilas && columnas>= 0 && columnas< NumColumnas && filas+2>= 0 && filas+2< NumFilas && columnas>= 0 && columnas< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.ROJO_S && celdas[filas+1][columnas]==ContenidoCeldas.ROJO_O && celdas[filas+2][columnas]==ContenidoCeldas.ROJO_S);
+                        if (celdas[filas][columnas]==ContenidoCeldas.ROJO_S && celdas[filas+1][columnas]==ContenidoCeldas.ROJO_O && celdas[filas+2][columnas]==ContenidoCeldas.ROJO_S) return true;
 
                     if( filas+1>= 0 && filas+1< NumFilas && columnas-1>= 0 && columnas-1< NumColumnas && filas+2>= 0 && filas+2< NumFilas && columnas-2>= 0 && columnas-2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.ROJO_S && celdas[filas+1][columnas-1]==ContenidoCeldas.ROJO_O && celdas[filas+2][columnas-2]==ContenidoCeldas.ROJO_S);
+                        if (celdas[filas][columnas]==ContenidoCeldas.ROJO_S && celdas[filas+1][columnas-1]==ContenidoCeldas.ROJO_O && celdas[filas+2][columnas-2]==ContenidoCeldas.ROJO_S) return true;
 
                     if( filas-1>= 0 && filas-1< NumFilas && columnas-1>= 0 && columnas-1< NumColumnas && filas-2>= 0 && filas-2< NumFilas && columnas-2>= 0 && columnas-2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.ROJO_S && celdas[filas-1][columnas-1]==ContenidoCeldas.ROJO_O && celdas[filas-2][columnas-2]==ContenidoCeldas.ROJO_S);
+                        if (celdas[filas][columnas]==ContenidoCeldas.ROJO_S && celdas[filas-1][columnas-1]==ContenidoCeldas.ROJO_O && celdas[filas-2][columnas-2]==ContenidoCeldas.ROJO_S) return true;
 
                     if( filas>= 0 && filas< NumFilas && columnas-1>= 0 && columnas-1< NumColumnas && filas>= 0 && filas< NumFilas && columnas-2>= 0 && columnas-2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.ROJO_S && celdas[filas][columnas-1]==ContenidoCeldas.ROJO_O && celdas[filas][columnas-2]==ContenidoCeldas.ROJO_S);
+                        if (celdas[filas][columnas]==ContenidoCeldas.ROJO_S && celdas[filas][columnas-1]==ContenidoCeldas.ROJO_O && celdas[filas][columnas-2]==ContenidoCeldas.ROJO_S) return true;
 
-                    if( filas-1>= 0 && filas-1< NumFilas && columnas-1>= 0 && columnas-1< NumColumnas && filas-2>= 0 && filas-2< NumFilas && columnas-2>= 0 && columnas-2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.ROJO_S && celdas[filas-1][columnas]==ContenidoCeldas.ROJO_O && celdas[filas-2][columnas]==ContenidoCeldas.ROJO_S);
-                }else{
-                    if( filas-1>= 0 && filas-1< NumFilas && columnas+1>= 0 && columnas+1< NumColumnas && filas-2>= 0 && filas-2< NumFilas && columnas+2>= 0 && columnas+2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.ROJO_O && celdas[filas-1][columnas+1]==ContenidoCeldas.ROJO_S && celdas[filas-2][columnas+2]==ContenidoCeldas.ROJO_S);
-
-                    if( filas>= 0 && filas< NumFilas && columnas+1>= 0 && columnas+1< NumColumnas && filas>= 0 && filas< NumFilas && columnas+2>= 0 && columnas+2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.ROJO_O && celdas[filas][columnas+1]==ContenidoCeldas.ROJO_S && celdas[filas][columnas+2]==ContenidoCeldas.ROJO_S);
-
-                    if( filas+1>= 0 && filas+1< NumFilas && columnas+1>= 0 && columnas+1< NumColumnas && filas+2>= 0 && filas+2< NumFilas && columnas+2>= 0 && columnas+2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.ROJO_O && celdas[filas+1][columnas+1]==ContenidoCeldas.ROJO_S && celdas[filas+2][columnas+2]==ContenidoCeldas.ROJO_S);
-
-                    if( filas+1>= 0 && filas+1< NumFilas && columnas>= 0 && columnas< NumColumnas && filas+2>= 0 && filas+2< NumFilas && columnas>= 0 && columnas< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.ROJO_O && celdas[filas+1][columnas]==ContenidoCeldas.ROJO_S && celdas[filas+2][columnas]==ContenidoCeldas.ROJO_S);
-
-                    if( filas+1>= 0 && filas+1< NumFilas && columnas-1>= 0 && columnas-1< NumColumnas && filas+2>= 0 && filas+2< NumFilas && columnas-2>= 0 && columnas-2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.ROJO_O && celdas[filas+1][columnas-1]==ContenidoCeldas.ROJO_S && celdas[filas+2][columnas-2]==ContenidoCeldas.ROJO_S);
-
-                    if( filas-1>= 0 && filas-1< NumFilas && columnas-1>= 0 && columnas-1< NumColumnas && filas-2>= 0 && filas-2< NumFilas && columnas-2>= 0 && columnas-2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.ROJO_O && celdas[filas-1][columnas-1]==ContenidoCeldas.ROJO_S && celdas[filas-2][columnas-2]==ContenidoCeldas.ROJO_S);
-
-                    if( filas>= 0 && filas< NumFilas && columnas-1>= 0 && columnas-1< NumColumnas && filas>= 0 && filas< NumFilas && columnas-2>= 0 && columnas-2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.ROJO_O && celdas[filas][columnas-1]==ContenidoCeldas.ROJO_S && celdas[filas][columnas-2]==ContenidoCeldas.ROJO_S);
-
-                    if( filas-1>= 0 && filas-1< NumFilas && columnas-1>= 0 && columnas-1< NumColumnas && filas-2>= 0 && filas-2< NumFilas && columnas-2>= 0 && columnas-2< NumColumnas)
-                        return (celdas[filas][columnas]==ContenidoCeldas.ROJO_O && celdas[filas-1][columnas]==ContenidoCeldas.ROJO_S && celdas[filas-2][columnas]==ContenidoCeldas.ROJO_S);
+                    if((filas-1>=0 && filas-1<NumFilas && columnas>=0 && columnas<NumColumnas)&&(filas-2>=0 && filas-2<NumFilas && columnas>=0 && columnas<NumColumnas))
+                        if (celdas[filas][columnas]==ContenidoCeldas.ROJO_S && celdas[filas-1][columnas]==ContenidoCeldas.ROJO_O && celdas[filas-2][columnas]==ContenidoCeldas.ROJO_S) return true;
                 }
             }
         }
@@ -393,15 +346,15 @@ public class Tablero {
 
                 }
             }
-            int NumeroDeCeldasVacias=0;
+            int NumeroDeCeldasNoVacias=0;
             for(int i=0; i<NumFilas;i++)
             {
                 for(int j=0; j<NumColumnas; j++)
                 {
-                    if(celdas[i][j]==ContenidoCeldas.VACIO) NumeroDeCeldasVacias++;
+                    if(celdas[i][j]!=ContenidoCeldas.VACIO) NumeroDeCeldasNoVacias++;
                 }
             }
-            if(NumeroDeCeldasVacias==(NumFilas*NumColumnas))
+            if(NumeroDeCeldasNoVacias==(NumFilas*NumColumnas))
             {
                 return true;
             }

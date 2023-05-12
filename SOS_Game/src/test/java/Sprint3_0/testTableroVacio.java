@@ -15,4 +15,5 @@ public class testTableroVacio {
             for (int columnas = 0; columnas<tablero.getNumColumnas(); columnas++)
                 assertEquals("EL TABLERO ESTA VACIO", tablero.getContenidoCeldas(filas,columnas), Tablero.ContenidoCeldas.VACIO);
     }
+
 }
