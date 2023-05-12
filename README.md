@@ -22,6 +22,6 @@ Podrá interactuar con el tablero, en el terminal se mostraran los turnos asigna
 
 -Para limpiar toda la ventana presione el boton NewGame
 
-#ACLARACIONES ENTREGA EN EL SPRINT 3
+**ACLARACIONES ENTREGA EN EL SPRINT 3**
 - Debido a la complejidad hecha en la GUI en el sprint 2 se decidio por mejorarlo en el sprint 4; sin embargo todas las implementaciones pedidas en el sprint 3
 estan realizadas y probadas en los test, que corresponden a los criterios de aceptación que se hicieron en el sprin 1.
